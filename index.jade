@@ -3,6 +3,10 @@ script(src='/bower_components/jquery/dist/jquery.min.js')
 script(type='text/javascript', src='/bower_components/angular/angular.js')
 script(type='text/javascript', src='/app/app.js')
 body(ng-app='app')  
-  div(ng-controller='testCtrl')
-    div hi
-    div {{test}}
+  .container
+    h1 Find a Job Today
+      div(ng-controller='testCtrl')
+        .list-group
+          a.list-group-item(href="#" ng-repeat="job in jobs")
+            h4.list-group-item-heading {{ job.title }}
+            p.list-group-item-text {{ job.description }}
